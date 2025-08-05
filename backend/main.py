@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends, HTTPException, Request
 from sqlalchemy.orm import Session
-from database import SessionLocal, engine, Base
-from models import BlogPost
-from auth import verify_google_token
+from src.database import SessionLocal, engine, Base
+from src.models import BlogPost
+from src.auth import verify_google_token
 from fastapi.middleware.cors import CORSMiddleware
 
 Base.metadata.create_all(bind=engine)
