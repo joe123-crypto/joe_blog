@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe's Blog</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Minimal Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Sign-In -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
-    <header>
-        <h1><a href="/" class="site-title">Joe's Blog</a></h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="write.html">Write a Post</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <nav>
-            <ul id="posts-list">
-                <!-- Posts will be dynamically loaded here by JavaScript -->
-            </ul>
-        </nav>
-    </main>
-    <script type="module" src="index.js"></script>
+
+  <h1>My Blog</h1>
+
+  <!-- Google Sign-In button container -->
+  <div id="g_id_onload"
+       data-client_id="691346430572-26d1svc67mtp30vbu6hdq3sbev8e42c8.apps.googleusercontent.com"
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="false">
+  </div>
+
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-shape="rectangular"
+       data-logo_alignment="left">
+  </div>
+
+  <button id="signout" onclick="signOut()">Sign out</button>
+
+  <div id="editor">
+    <h2>Write a new post</h2>
+    <input type="text" id="title" placeholder="Post title" />
+    <textarea id="content" rows="5" placeholder="Write your blog post..."></textarea>
+    <button onclick="submitPost()">Publish</button>
+  </div>
+
+  <hr>
+
+  <div id="posts">
+    <h2>Recent Posts</h2>
+    <div id="postList">Loading posts...</div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
