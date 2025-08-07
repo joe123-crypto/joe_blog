@@ -14,7 +14,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5500",
         "https://websim.io",
-        "https://joe123-crypto.github.io/joe_blog/",
+        "https://joe123-crypto.github.io",
         "file://",
         ],
     allow_credentials=True,
